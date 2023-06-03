@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Add Content</h2>
+<form action="/submitAdd" method="post" th:object="${newContent}">
+  <div>
+    <label for="">Id</label>
+    <input type="number" name="id" th:field="${newContent.id}">
+  </div>
+  <div>
+    <label for="">Title</label>
+    <input type="text" name="title" th:field="${newContent.title}">
+  </div>
+  <div>
+    <label for="">Content</label>
+    <input type="text" name="content" th:field="${newContent.contentBody}">
+  </div>
+  <div>
+    <label for="">Created Date</label>
+    <input type="text" name="createdDate" th:field="${newContent.createdDate}">
+  </div>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head >
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Content list</h1>
+
+<div>
+    <a href="/showAddForm">Add new content</a>
+</div>
+
+<table>
+    <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Created_at</th>
+    </tr>
+    <tr th:each="content : ${contents}">
+        <td th:text="${content.id}"></td>
+        <td th:text="${content.title}"></td>
+        <td th:text="${content.contentBody}"></td>
+        <td th:text="${content.createdDate}"></td>
+        <td>
+            <a th:href="@{/edit/{id} (id = ${content.id})}">Edit</a>
+        </td>
+        <td>
+            <a th:href="@{/delete/{id} (id = ${content.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
